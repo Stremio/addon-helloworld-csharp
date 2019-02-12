@@ -1,33 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using StremioAddonExample.Models;
+using Newtonsoft.Json;
 
 namespace StremioAddonExample.Controllers
 {
-
     [ApiController]
     public class ManifestController : ControllerBase
     {
-        private readonly IHostingEnvironment _hostingEnvironment;
-
-        public ManifestController(IHostingEnvironment hostingEnvironment)
+        private static readonly Manifest manifest = new Manifest
         {
-            _hostingEnvironment = hostingEnvironment;
-        }
+            id = "org.stremio.asp.net.core.example",
+            version = "0.0.1",
+            name = "C# ASP.NET CORE 2.2 Stremio addon example",
+            description = "Sample addon made with Express providing a few public domain movies",
+            resources = new object[] {
+                "catalog",
+                "meta",
+                new {
+                    name = "stream",
+                    types = new string[] { "movie", "series" },
+                    idPrefixes = new string[] { "tt" }
+                }
+            },
+            types = new string[] { "movie", "series" },
+            catalogs = new Catalog[]
+            {
+                new Catalog{ type = "movie", id = "Hello, Core movies" },
+                new Catalog{ type = "series", id = "Hello, Core series" }
+            }
+        };
+
+        private static readonly string manifestJSON = JsonConvert.SerializeObject(manifest);
 
         [Route("manifest.json")]
         [HttpGet]
         public ActionResult<string> Get()
         {
-            // TODO: IMemoryCache
-            string contentRootPath = _hostingEnvironment.ContentRootPath;
-            var manifest = System.IO.File.ReadAllText(contentRootPath + "/manifest.json");
-
-            return manifest;
+            return manifestJSON;
         }
     }
 }
