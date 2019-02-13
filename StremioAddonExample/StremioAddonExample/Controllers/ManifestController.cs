@@ -34,9 +34,9 @@ namespace StremioAddonExample.Controllers
 
         [Route("manifest.json")]
         [HttpGet]
-        public ActionResult<string> Get()
+        public JsonResult Get()
         {
-            return manifestJSON;
+            return new JsonResult(manifest);
         }
     }
 }

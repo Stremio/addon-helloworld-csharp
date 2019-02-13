@@ -2,7 +2,7 @@
 
 namespace StremioAddonExample.Models
 {
-    public enum Type
+    public enum MetaType
     {
         movie,
         series,
@@ -50,6 +50,8 @@ namespace StremioAddonExample.Models
         public string Overview { get; set; }
     }
 
+
+    [System.Serializable]
     public class Meta
     {
         [JsonProperty("id", Required = Required.Always)]
@@ -61,8 +63,8 @@ namespace StremioAddonExample.Models
         [JsonProperty("Name", Required = Required.Always)]
         public string Name { get; set; }
 
-        [JsonProperty("generes", Required = Required.Always)]
-        public string[] Generes { get; set; }
+        [JsonProperty("genres", Required = Required.Always)]
+        public string[] Genres { get; set; }
 
         [JsonProperty("poster", Required = Required.Always)]
         public string Poster { get; set; }
