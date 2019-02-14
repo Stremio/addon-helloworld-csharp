@@ -50,13 +50,13 @@ namespace StremioAddonExample.Models
         public string InfoHash { get; set; }
         
         [JsonProperty("fileIdx", NullValueHandling = NullValueHandling.Ignore)]
-        public uint FileIdx { get; set; }
+        public uint? FileIdx { get; set; }
 
         [JsonProperty("mapIdx", NullValueHandling = NullValueHandling.Ignore)]
-        public uint MapIdx { get; set; }
+        public uint? MapIdx { get; set; }
 
         [JsonProperty("externalUrl", NullValueHandling = NullValueHandling.Ignore)]
-        public uint ExternalUrl { get; set; }
+        public string ExternalUrl { get; set; }
 
         [JsonProperty("externalUris", NullValueHandling = NullValueHandling.Ignore)]
         public ExternalUri[] ExternalUris { get; set; }
@@ -68,31 +68,31 @@ namespace StremioAddonExample.Models
         public string Title { get; set; }
 
         [JsonProperty("availability", NullValueHandling = NullValueHandling.Ignore)]
-        public Availability Availability { get; set; }
+        public Availability? Availability { get; set; }
 
         [JsonProperty("tag", NullValueHandling = NullValueHandling.Ignore)]
         public string Tag { get; set; }
 
         [JsonProperty("isFree", NullValueHandling = NullValueHandling.Ignore)]
-        public bool IsFree { get; set; }
+        public bool? IsFree { get; set; }
 
         [JsonProperty("isSubscription", NullValueHandling = NullValueHandling.Ignore)]
-        public bool IsSubscription { get; set; }
+        public bool? IsSubscription { get; set; }
 
         [JsonProperty("isPeered", NullValueHandling = NullValueHandling.Ignore)]
-        public bool IsPeered { get; set; }
+        public bool? IsPeered { get; set; }
 
         [JsonProperty("subtitles", NullValueHandling = NullValueHandling.Ignore)]
         public Subtitles[] Subtitles { get; set; }
 
         [JsonProperty("subtitlesExclusive", NullValueHandling = NullValueHandling.Ignore)]
-        public bool SubtitlesExclusive { get; set; }
+        public bool? SubtitlesExclusive { get; set; }
 
         [JsonProperty("live", NullValueHandling = NullValueHandling.Ignore)]
-        public bool Live { get; set; }
+        public bool? Live { get; set; }
 
         [JsonProperty("repeat", NullValueHandling = NullValueHandling.Ignore)]
-        public bool Repeat { get; set; }
+        public bool? Repeat { get; set; }
 
         [JsonProperty("geos", NullValueHandling = NullValueHandling.Ignore)]
         public string[] Geos { get; set; }

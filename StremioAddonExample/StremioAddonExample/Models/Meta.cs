@@ -29,19 +29,19 @@ namespace StremioAddonExample.Models
         public object PublishedAt { get; set; }
 
         [JsonProperty("thumbnail", NullValueHandling = NullValueHandling.Ignore)]
-        public int Thumbnail { get; set; }
+        public string Thumbnail { get; set; }
 
         [JsonProperty("streams", NullValueHandling = NullValueHandling.Ignore)]
         public Stream[] Streams { get; set; }
 
         [JsonProperty("available", NullValueHandling = NullValueHandling.Ignore)]
-        public bool Available { get; set; }
+        public bool? Available { get; set; }
 
         [JsonProperty("season", NullValueHandling = NullValueHandling.Ignore)]
-        public int Season { get; set; }        
+        public int? Season { get; set; }        
 
         [JsonProperty("episode", NullValueHandling = NullValueHandling.Ignore)]
-        public int Episode { get; set; }
+        public int? Episode { get; set; }
 
         [JsonProperty("trailer", NullValueHandling = NullValueHandling.Ignore)]
         public string Trailer { get; set; }
@@ -97,7 +97,7 @@ namespace StremioAddonExample.Models
         public string DvdRelease { get; set; }
 
         [JsonProperty("inTheaters", NullValueHandling = NullValueHandling.Ignore)]
-        public bool InTheaters { get; set; }
+        public bool? InTheaters { get; set; }
 
         [JsonProperty("videos", NullValueHandling = NullValueHandling.Ignore)]
         public Video[] Videos { get; set; }

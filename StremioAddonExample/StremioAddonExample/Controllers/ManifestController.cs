@@ -11,22 +11,19 @@ namespace StremioAddonExample.Controllers
         {
             id = "org.stremio.asp.net.core.example",
             version = "0.0.1",
-            name = "C# ASP.NET CORE 2.2 Stremio addon example",
-            description = "Sample addon made with Express providing a few public domain movies",
+            name = "CORE Example",
+            description = "Sample addon made C# ASP.NET CORE 2.2 providing a few public domain movies",
             resources = new object[] {
                 "catalog",
                 "meta",
-                new {
-                    name = "stream",
-                    types = new string[] { "movie", "series" },
-                    idPrefixes = new string[] { "tt" }
-                }
+                "stream"
             },
+            idPrefixes = new string[] { "tt" },
             types = new string[] { "movie", "series" },
             catalogs = new Catalog[]
             {
-                new Catalog{ type = "movie", id = "Hello, Core movies" },
-                new Catalog{ type = "series", id = "Hello, Core series" }
+                new Catalog{ type = "movie", id = "coreMovies", name = "Core movies" },
+                new Catalog{ type = "series", id = "coreSeries", name = "Core series" }
             }
         };
 
